@@ -1,0 +1,6 @@
+# 1. تثبيت CLI
+npm install -g @angular/cli@latest
+ 
+
+# 2. إنشاء المشروع
+ng new crud-angular --routing --style=scss --standalone

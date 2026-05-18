@@ -84,13 +84,73 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   `,
   styles: [`
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-  `]
+  :host {
+    animation: fadeInUp 0.5s ease-out;
+    display: block;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .header button {
+    border-radius: 12px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .header button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .mat-mdc-table {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .mat-mdc-header-cell {
+    background: #f8fafc;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--dark);
+    padding: 1rem;
+  }
+
+  .mat-mdc-cell {
+    padding: 1rem;
+  }
+
+  .mat-mdc-row {
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .mat-mdc-row:hover {
+    background: #f1f5f9;
+    transform: scale(1.01);
+  }
+
+  .mat-mdc-paginator {
+    border-radius: 0 0 16px 16px;
+  }
+`]
 })
 export class PostListComponent implements OnInit {
   private postService = inject(PostService);

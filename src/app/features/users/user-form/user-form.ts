@@ -59,9 +59,60 @@ import { NgIf } from '@angular/common';
     </mat-card>
   `,
   styles: [`
-    .full-width { width: 100%; margin-bottom: 16px; }
-    .actions { display: flex; justify-content: flex-end; gap: 8px; }
-  `]
+  :host {
+    animation: fadeInUp 0.5s ease-out;
+    display: block;
+  }
+
+  mat-card {
+    border-radius: 16px;
+    box-shadow: var(--shadow-xl);
+    background: white;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  mat-card-header {
+    background: var(--gradient-1);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  mat-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  mat-card-content {
+    padding: 2rem;
+  }
+
+  .full-width {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .actions button {
+    border-radius: 12px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+`]
 })
 export class UserFormComponent implements OnInit {
   private fb = inject(FormBuilder);

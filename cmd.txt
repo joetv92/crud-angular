@@ -4,3 +4,27 @@ npm install -g @angular/cli@latest
 
 # 2. إنشاء المشروع
 ng new crud-angular --routing --style=scss --standalone
+
+---. Ajout d’Angular Material
+ng add @angular/material
+
+---creer manuellement 
+user.model.ts
+post.model.ts
+user.service.ts
+post.service.ts
+
+
+ng g c shared/components/confirm-dialog --standalone
+ng g c layout/main-layout --standalone
+
+remplir / 
+    app.routes.ts
+    app.config.ts
+
+npm install @angular/animations
+ng g c features/home --standalone
+ng g c features/users/user-list --standalone
+ng g c features/users/user-form --standalone
+ng g c features/posts/post-list --standalone
+ng g c features/posts/post-form --standalone
